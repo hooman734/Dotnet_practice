@@ -84,6 +84,7 @@ app.MapPut("api/v1/commands/{id}", async (ICommandRepo repo, IMapper mapper, Gui
     await repo.SaveChangesTask();
     return Results.NoContent();
 });
+
 // Delete
 app.MapDelete("/api/v1/commands/{id}", async (ICommandRepo repo, IMapper mapper, Guid id) =>
 {
@@ -97,7 +98,5 @@ app.MapDelete("/api/v1/commands/{id}", async (ICommandRepo repo, IMapper mapper,
     return Results.NoContent();
 });
 
-
-app.MapGet("/", () => "Not Found Page!");
 
 app.Run();
